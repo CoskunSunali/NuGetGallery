@@ -10,10 +10,10 @@
         <h2><a href="@Url.Package(Model.Id, Model.UseVersion ? Model.Version : null)">@Model.Title.Abbreviate(60)</a></h2>
 
         <span class="package-by">
-            by: <!-- TODO: Test this with multiple authors! -->
+            by:
             @foreach (var owner in Model.Owners)
             {
-                <a href="@Url.User(owner)" title="@owner.Username">@owner.Username</a>
+                <a href="@Url.User(owner)" title="View @owner.Username's profile">@owner.Username</a>
             }
         </span>
     </div>
