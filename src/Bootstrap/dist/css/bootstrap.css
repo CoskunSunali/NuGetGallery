@@ -4010,27 +4010,19 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .pager li {
   display: inline;
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 20px;
+  color: #666;
 }
 .pager li > a,
 .pager li > span {
-  display: inline-block;
-  padding: 5px 14px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 15px;
+  color: #337ab7;
 }
-.pager li > a:hover,
-.pager li > a:focus {
-  text-decoration: none;
-  background-color: #eee;
-}
-.pager .next > a,
-.pager .next > span {
-  float: right;
-}
-.pager .previous > a,
-.pager .previous > span {
-  float: left;
+.pager .next {
+  border-left-color: #337ab7;
+  border-left-style: solid;
+  border-left-width: 1px;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,

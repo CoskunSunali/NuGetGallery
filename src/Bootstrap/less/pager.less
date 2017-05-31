@@ -11,33 +11,34 @@
   &:extend(.clearfix all);
   li {
     display: inline;
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 20px;
+    color: #666666;
+
     > a,
     > span {
-      display: inline-block;
-      padding: 5px 14px;
-      background-color: @pager-bg;
-      border: 1px solid @pager-border;
-      border-radius: @pager-border-radius;
+      color: @link-color;
     }
 
     > a:hover,
     > a:focus {
-      text-decoration: none;
-      background-color: @pager-hover-bg;
     }
   }
 
   .next {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: @brand-primary;
+
     > a,
     > span {
-      float: right;
     }
   }
 
   .previous {
     > a,
     > span {
-      float: left;
     }
   }
 
