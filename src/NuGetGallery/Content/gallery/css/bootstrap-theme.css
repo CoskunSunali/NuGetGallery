@@ -140,9 +140,6 @@ body {
 }
 .page-list-packages h1 {
   margin-bottom: 33px;
-  font-size: 46px;
-  font-weight: 300;
-  line-height: 56px;
 }
 .page-list-packages .packages {
   border-top-color: #dbdbdb;
@@ -150,8 +147,9 @@ body {
   border-top-width: 1px;
 }
 .page-list-packages .packages .package {
-  padding-top: 19px;
-  padding-bottom: 19px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 15px;
   border-bottom-color: #dbdbdb;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -165,16 +163,13 @@ body {
 .page-list-packages .packages .package .package-header h2 {
   display: inline;
   font-weight: 300;
-  line-height: 40px;
 }
 .page-list-packages .packages .package .package-header .package-by {
   margin-left: 10px;
-  font-size: 15px;
   color: #000;
 }
 .page-list-packages .packages .package .package-statistics {
   margin-top: 10px;
-  font-size: 15px;
   line-height: 20px;
   color: #666;
 }
@@ -190,12 +185,12 @@ body {
 }
 .page-list-packages .packages .package .package-details {
   margin-top: 10px;
-  font-size: 15px;
   line-height: 20px;
   color: #000;
 }
 .page-list-packages .packages .package .package-tags {
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-left: -2px;
 }
 .page-list-packages .pager {
   float: right;

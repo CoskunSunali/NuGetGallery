@@ -1,22 +1,20 @@
 .page-list-packages {
   h1 {
-    font-size: 46px;
-    font-weight: 300;
-    line-height: 56px;
     margin-bottom: 33px;
   }
 
   .packages {
     border-top-style: solid;
     border-top-width: 1px;
-    border-top-color: #DBDBDB;
+    border-top-color: @gray-lighter;
 
     .package {
-      padding-top: 19px;
-      padding-bottom: 19px;
+      padding-top: (@padding-large-vertical * 2);
+      padding-bottom: (@padding-large-vertical * 2);
       border-bottom-style: solid;
       border-bottom-width: 1px;
-      border-bottom-color: #DBDBDB;
+      border-bottom-color: @gray-lighter;
+      font-size: 15px;
 
       img {
         margin-left: auto;
@@ -29,43 +27,40 @@
         h2 {
           display: inline;
           font-weight: 300;
-          line-height: 40px;
         }
 
         .package-by {
-          margin-left: 10px;
-          color: #000000;
-          font-size: 15px;
+          margin-left: @padding-small-horizontal;
+          color: @gray-base;
         }
       }
 
       .package-statistics {
-        margin-top: 10px;
-        font-size: 15px;
+        margin-top: @padding-large-vertical;
         line-height: 20px;
-        color: #666666;
+        color: @gray-light;
 
         .package-statistics-middle {
-          margin-left: 10px;
-          margin-right: 10px;
-          padding-left: 10px;
-          padding-right: 10px;
+          margin-left: @padding-small-horizontal;
+          margin-right: @padding-small-horizontal;
+          padding-left: @padding-small-horizontal;
+          padding-right: @padding-small-horizontal;
           border-left-style: solid;
           border-right-style: solid;
           border-width: 1px;
-          border-color: #DBDBDB;
+          border-color: @gray-lighter;
         }
       }
 
       .package-details {
-        margin-top: 10px;
-        color: #000000;
-        font-size: 15px;
+        margin-top: @padding-large-vertical;
+        color: @gray-base;
         line-height: 20px;
       }
 
       .package-tags {
-        margin-top: 8px;
+        margin-top: @padding-large-vertical;
+        margin-left: -2px;
       }
     }
   }
