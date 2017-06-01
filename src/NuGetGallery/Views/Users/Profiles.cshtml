@@ -1,11 +1,10 @@
 ﻿@model UserProfileModel
 @{
     ViewBag.Title = @Model.Username;
-    Layout = "~/Views/Shared/TwoColumnLayout.cshtml";
+    Layout = "~/Views/Shared/Gallery/Layout.cshtml";
 }
 
 
-@section SideColumn {
     @if (!String.IsNullOrEmpty(Model.EmailAddress))
     {
         <p>
@@ -22,7 +21,6 @@
             <p class="stat-label">@(Model.TotalPackageDownloadCount == 1 ? "Download" : "Downloads") of @Model.Username's packages</p>
         </div>
     </div>
-}
 
 <h1 class="page-heading">@Model.Username's Profile</h1>
 

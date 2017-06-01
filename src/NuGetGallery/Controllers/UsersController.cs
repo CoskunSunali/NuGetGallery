@@ -351,7 +351,7 @@ namespace NuGetGallery
 
             var packages = _packageService.FindPackagesByOwner(user, includeUnlisted: false)
                 .OrderByDescending(p => p.PackageRegistration.DownloadCount)
-                .Select(p => new PackageViewModel(p)
+                .Select(p => new ListPackageItemViewModel(p)
                 {
                     DownloadCount = p.PackageRegistration.DownloadCount
                 }).ToList();
