@@ -19,12 +19,10 @@
                 }
             </div>
 
-            <div class="list-packages">
+            <div class="list-packages" role="list">
                 @foreach (var package in Model.PagedPackages)
                 {
-                    <div class="row package">
-                        @Html.Partial("_ListPackage", package)
-                    </div>
+                    @Html.Partial("_ListPackage", package)
                 }
             </div>
 

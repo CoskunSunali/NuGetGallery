@@ -1,53 +1,55 @@
 ﻿@model ListPackageItemViewModel
 
-<div class="col-md-1">
-    <a href="@Url.Package(Model)" title="View more about @Model.Title">
-        <img class="img-responsive" src="@(PackageHelper.ShouldRenderUrl(Model.IconUrl) ? Model.IconUrl : Url.Absolute("~/Content/gallery/img/default-package-icon.png"))" alt="@Model.Id icon" onerror="this.src = '@Url.Absolute("~/Content/gallery/img/default-package-icon.png")';" />
-    </a>
-</div>
-<div class="col-md-11">
-    <div class="package-header">
-        <h2><a href="@Url.Package(Model.Id, Model.UseVersion ? Model.Version : null)">@Model.Title.Abbreviate(60)</a></h2>
+<div class="row package" role="listitem">
+    <div class="col-sm-1">
+        <a href="@Url.Package(Model)" title="View more about @Model.Title">
+            <img class="img-responsive" src="@(PackageHelper.ShouldRenderUrl(Model.IconUrl) ? Model.IconUrl : Url.Absolute("~/Content/gallery/img/default-package-icon.png"))" alt="@Model.Id icon" onerror="this.src = '@Url.Absolute("~/Content/gallery/img/default-package-icon.png")';" />
+        </a>
+    </div>
+    <div class="col-sm-11">
+        <div class="package-header">
+            <h2><a href="@Url.Package(Model.Id, Model.UseVersion ? Model.Version : null)">@Model.Title.Abbreviate(60)</a></h2>
 
-        <span class="package-by">
-            by:
-            @foreach (var owner in Model.Owners)
+            <span class="package-by">
+                by:
+                @foreach (var owner in Model.Owners)
             {
-                <a href="@Url.User(owner)" title="View @owner.Username's profile">@owner.Username</a>
-            }
-        </span>
-    </div>
+                    <a href="@Url.User(owner)" title="View @owner.Username's profile">@owner.Username</a>
+                }
+            </span>
+        </div>
 
-    <div class="package-statistics">
-        <span>
-            <i class="ms-Icon ms-Icon--Download"></i>
-            @Model.TotalDownloadCount.ToNuGetNumberString() total @(Model.TotalDownloadCount == 1 ? "download" : "downloads")
-        </span>
-        <span class="package-statistics-middle">
-            <i class="ms-Icon ms-Icon--History"></i>
-            last updated <span data-datetime="@Model.LastUpdated.ToJavaScriptUTC()"></span>
-        </span>
-        <span>
-            <i class="ms-Icon ms-Icon--Flag"></i>
-            Latest version: @Model.Version @(Model.Prerelease ? "(prerelease)" : "")
-        </span>
-    </div>
+        <div class="package-statistics">
+            <span>
+                <i class="ms-Icon ms-Icon--Download" aria-hidden="true"></i>
+                @Model.TotalDownloadCount.ToNuGetNumberString() total @(Model.TotalDownloadCount == 1 ? "download" : "downloads")
+            </span>
+            <span class="package-statistics-middle">
+                <i class="ms-Icon ms-Icon--History" aria-hidden="true"></i>
+                last updated <span data-datetime="@Model.LastUpdated.ToJavaScriptUTC()"></span>
+            </span>
+            <span>
+                <i class="ms-Icon ms-Icon--Flag" aria-hidden="true"></i>
+                Latest version: @Model.Version @(Model.Prerelease ? "(prerelease)" : "")
+            </span>
+        </div>
 
-    <div class="package-details">
-        @Model.ShortDescription
-        @if (Model.IsDescriptionTruncated)
-        {
-            @Html.RouteLink("More information", RouteName.DisplayPackage, new { Model.Id, Model.Version })
-        }
-    </div>
-
-    @if (@Model.Tags.AnySafe())
-    {
-        <div class="package-tags">
-            @foreach (var tag in Model.Tags)
+        <div class="package-details">
+            @Model.ShortDescription
+            @if (Model.IsDescriptionTruncated)
             {
-                <a href="@Url.Search("Tags:\"" + tag + "\"")" title="Search for @tag" class="tag">@tag</a>
+                @Html.RouteLink("More information", RouteName.DisplayPackage, new { Model.Id, Model.Version })
             }
         </div>
-    }
+
+        @if (@Model.Tags.AnySafe())
+        {
+            <div class="package-tags">
+                @foreach (var tag in Model.Tags)
+                {
+                    <a href="@Url.Search("Tags:\"" + tag + "\"")" title="Search for @tag" class="tag">@tag</a>
+                }
+            </div>
+        }
+    </div>
 </div>
